@@ -1,35 +1,37 @@
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+
+import React, { useContext, useState } from "react";
 import cities from "../data/turkeyCities.json";
 import WeatherContext from "../context/WeatherContext";
 
 const City = () => {
-  const city = useContext(WeatherContext);
-  console.log(city);
-  const [cits, setCits] = useState("");
+  const { selectedCity, setSelectedCity } = useContext(WeatherContext);
+
   const handleChange = (event) => {
-    setCits(event.target.value);
+    setSelectedCity(event.target.value);
   };
+
   return (
     <div>
+      <h1> Mustafa </h1>{" "}
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">City</InputLabel>
+        <InputLabel id="demo-simple-select-label"> City </InputLabel>{" "}
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="City"
-          value={cits}
+          value={selectedCity}
           variant="filled"
           onChange={handleChange}
         >
           {cities.map((city, id) => (
             <MenuItem key={id} value={city.name}>
+              {" "}
               {city.name}
             </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+          ))}{" "}
+        </Select>{" "}
+      </FormControl>{" "}
     </div>
   );
 };

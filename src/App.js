@@ -1,14 +1,16 @@
 import "./App.css";
 import City from "./components/City";
-import WeatherContext from "./context/WeatherContext";
+import WeatherForecast from "./components/WeatherForecast";
+import {WeatherProvider} from "./context/WeatherContext";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <WeatherContext.Provider value="Ankara">
+        <WeatherProvider >
           <City />
-        </WeatherContext.Provider>
+          <WeatherForecast/>
+        </WeatherProvider>
       </div>
     </div>
   );
