@@ -1,15 +1,15 @@
 import "./App.css";
 import City from "./components/City";
 import WeatherForecast from "./components/WeatherForecast";
-import {WeatherProvider} from "./context/WeatherContext";
+import { WeatherProvider } from "./context/WeatherContext";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <WeatherProvider >
+        <WeatherProvider>
           <City />
-          <WeatherForecast/>
+          <WeatherForecast />
         </WeatherProvider>
       </div>
     </div>
